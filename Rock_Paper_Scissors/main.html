@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let playGame= confirm('Shall we play rock, paper, scissors?');
+        if(playGame) {
+            //Game area
+            let playerChoice=prompt('Please choose rock,paper or scissors');
+            if(playerChoice){
+                let playerOne= playerChoice.trim().toLocaleLowerCase();
+                if(playerOne==='rock' || playerOne==='paper' || playerOne==='scissors'){
+                    let computerChoice = Math.floor(Math.random() * 3 + 1);
+
+                    let computer = computerChoice === 1 ? "rock" 
+                        : computerChoice === 2 ? "paper" 
+                        : "scissors";
+                    
+                    let result= 
+                    playerOne===computer 
+                        ? 'Game tied' 
+                        :playerOne === "rock" && computer === "paper" 
+                        ? `player one: ${playerOne} \n computer: ${computer} \n COMPUTER WINS!!`
+                        :playerOne === "paper" && computer === "scissors" 
+                        ? `player one: ${playerOne} \n computer: ${computer} \n COMPUTER WINS!!`
+                        :playerOne === "scissors" && computer==="rock" 
+                        ? `player one: ${playerOne} \n computer: ${computer} \n COMPUTER WINS!!`
+                        :`player one: ${playerOne} \n computer: ${computer} \n CONGRATULATIONS YOU WIN!!`;             
+                        alert(result);
+
+                        let playAgain= confirm("Want to give it another try?")
+                        if(playAgain) {
+                            location.reload();
+                        }else {
+                            ''
+                        }
+                }  else{
+                    alert('You did not choose any of the options')
+                }
+            }else{
+                alert('Guess you changed your mind');
+            }
+        }else {
+            alert('Maybe next time then');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
